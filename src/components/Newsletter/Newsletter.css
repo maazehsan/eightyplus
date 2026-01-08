@@ -1,0 +1,122 @@
+.newsletter {
+  padding: var(--space-24) 0;
+  background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-espresso) 100%);
+  color: var(--color-cream);
+  text-align: center;
+}
+
+.newsletter__container {
+  max-width: var(--container-tight);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.newsletter__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-6);
+  background: var(--color-gold);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-espresso);
+}
+
+.newsletter__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.newsletter__title {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-cream);
+}
+
+.newsletter__subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-stone);
+  margin-bottom: var(--space-8);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__form {
+  display: flex;
+  gap: var(--space-4);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.newsletter__input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+.newsletter__input {
+  width: 100%;
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-base);
+  background: var(--color-warm-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--color-espresso);
+  transition: all var(--transition-fast);
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-muted);
+}
+
+.newsletter__input:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+.newsletter__input--error {
+  border-color: var(--color-error);
+}
+
+.newsletter__error {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-size: var(--text-sm);
+  color: #F87171;
+}
+
+.newsletter__success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(93, 125, 93, 0.2);
+  border: 1px solid var(--color-success);
+  border-radius: var(--radius-md);
+  color: var(--color-stone);
+}
+
+.newsletter__success svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-success);
+}
+
+.newsletter__disclaimer {
+  margin-top: var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+@media (max-width: 480px) {
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .newsletter__input-wrapper {
+    margin-bottom: var(--space-4);
+  }
+}
