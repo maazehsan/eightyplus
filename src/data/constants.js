@@ -44,7 +44,7 @@ export const FEATURED_ITEMS = [
     name: 'Signature Latte',
     description: 'Our house espresso with silky steamed milk and a hint of vanilla.',
     price: '$5.50',
-    image: 'https://images.unsplash.com/photo-1534778101976-62847782c213?w=400&h=400&fit=crop&q=80',
+    image: 'https://myeverydaytable.com/wp-content/uploads/ICEDLATTE_0_4.jpg',
     tag: null,
   },
   {
@@ -52,7 +52,7 @@ export const FEATURED_ITEMS = [
     name: 'Pour Over',
     description: 'Single-origin, hand-poured for a clean, nuanced cup.',
     price: '$4.75',
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop&q=80',
+    image: 'https://www.acouplecooks.com/wp-content/uploads/2019/03/Coffee-Chemex-014.jpg',
     tag: 'Popular',
   },
   {
@@ -60,7 +60,7 @@ export const FEATURED_ITEMS = [
     name: 'Honey Oat Flat White',
     description: 'Velvety oat milk, raw honey, double ristretto.',
     price: '$6.25',
-    image: 'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400&h=400&fit=crop&q=80',
+    image: 'https://www.homegrounds.co/wp-content/uploads/2023/07/flat-white-in-black-mug-with-latte-art-1.jpg',
     tag: 'Seasonal',
   },
   {
@@ -68,7 +68,7 @@ export const FEATURED_ITEMS = [
     name: 'Cold Brew',
     description: '18-hour steeped, smooth and refreshing over ice.',
     price: '$5.00',
-    image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop&q=80',
+    image: 'https://www.natalieshealth.com/wp-content/uploads/2022/05/Cold-Brew-Iced-Coffee-featured-image.jpeg',
     tag: null,
   },
   {
@@ -76,7 +76,7 @@ export const FEATURED_ITEMS = [
     name: 'Almond Croissant',
     description: 'Butter croissant filled with almond cream, toasted almonds.',
     price: '$4.50',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&fit=crop&q=80',
+    image: 'https://www.shugarysweets.com/wp-content/uploads/2017/06/almond-croissants-recipe.jpg',
     tag: null,
   },
   {
@@ -84,7 +84,7 @@ export const FEATURED_ITEMS = [
     name: 'Matcha Latte',
     description: 'Ceremonial-grade matcha whisked with your choice of milk.',
     price: '$5.75',
-    image: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&h=400&fit=crop&q=80',
+    image: 'https://www.acozykitchen.com/wp-content/uploads/2017/04/IcedMatchaLatte-1.jpg',
     tag: 'New',
   },
 ];
@@ -95,7 +95,7 @@ export const ABOUT_CONTENT = {
     'Eighty Plus was born from a simple belief: great coffee deserves a great space. We source our beans directly from farmers who share our commitment to quality and sustainability.',
     'Every cup is crafted with care—from the careful selection of single-origin beans to the precise art of extraction. Our space is designed to be your third place: not home, not work, but somewhere in between.',
   ],
-  image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop&q=80',
+  image: 'https://wallpapers.com/images/hd/cafe-background-892zplox9rlzxi62.jpg',
 };
 
 export const TESTIMONIALS = [

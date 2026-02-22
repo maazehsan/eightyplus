@@ -9,12 +9,18 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 80);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    // Prevent body scroll when mobile nav is open
+    document.body.style.overflow = isMobileOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileOpen]);
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
@@ -26,16 +32,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`navbar ${isScrolled ? 'navbar--solid' : 'navbar--transparent'}`}>
+    <header className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container">
         <a href="/" className="navbar__logo">
-          <svg className="navbar__logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="15" stroke="currentColor" strokeWidth="2"/>
-            <path d="M10 12h12v8a6 6 0 01-6 6 6 6 0 01-6-6v-8z" fill="currentColor"/>
-            <path d="M22 14h2a3 3 0 010 6h-2" stroke="currentColor" strokeWidth="2"/>
-            <path d="M12 8c0-2 1-3 2-3s2 1 2 0 1-3 2-3 2 1 2 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-          </svg>
-          Eighty Plus
+          EightyPlus
         </a>
 
         <nav className="navbar__nav">
@@ -53,7 +53,7 @@ const Navbar = () => {
             ))}
           </ul>
           <Button href="#menu" onClick={(e) => handleNavClick(e, '#menu')}>
-            View Menu
+            <span>Menu</span>
           </Button>
           
           <button
@@ -67,23 +67,21 @@ const Navbar = () => {
             <span></span>
           </button>
         </nav>
-
-        <nav className={`navbar__mobile-nav ${isMobileOpen ? 'navbar__mobile-nav--open' : ''}`}>
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="navbar__mobile-link"
-              onClick={(e) => handleNavClick(e, link.href)}
-            >
-              {link.label}
-            </a>
-          ))}
-          <Button href="#menu" onClick={(e) => handleNavClick(e, '#menu')} fullWidth>
-            View Menu
-          </Button>
-        </nav>
       </div>
+
+      <nav className={`navbar__mobile-nav ${isMobileOpen ? 'navbar__mobile-nav--open' : ''}`}>
+        {NAV_LINKS.map((link, index) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="navbar__mobile-link"
+            onClick={(e) => handleNavClick(e, link.href)}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 };

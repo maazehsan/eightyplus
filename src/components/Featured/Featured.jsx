@@ -42,15 +42,12 @@ const Featured = () => {
     <section className="featured" id="menu">
       <div className="featured__container">
         <header className="featured__header">
-          <div className="featured__header-content">
+          <div className="featured__title-group">
             <p className="featured__eyebrow">Our Menu</p>
             <h2 className="featured__title">Featured Selections</h2>
-            <p className="featured__subtitle">
-              Crafted with care, served with pride.
-            </p>
           </div>
           <Button variant="secondary" href="#contact">
-            Full Menu
+            <span>Full Menu</span>
           </Button>
         </header>
 

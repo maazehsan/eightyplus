@@ -1,17 +1,10 @@
-import { HERO_CONTENT } from '../../data/constants';
 import Button from '../Button/Button';
 import './Hero.css';
 
-const CheckIcon = () => (
-  <svg className="hero__badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
-const CoffeeIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M6 1v3M10 1v3M14 1v3" strokeLinecap="round" strokeLinejoin="round"/>
+const ArrowIcon = () => (
+  <svg className="hero__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <line x1="5" y1="12" x2="19" y2="12" strokeLinecap="round" strokeLinejoin="round"/>
+    <polyline points="12,5 19,12 12,19" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -24,70 +17,65 @@ const Hero = () => {
     }
   };
 
+  const marqueeContent = "Single Origin • Artisan Roasted • Fresh Daily • Brooklyn NY • Est. 2020 • Specialty Coffee • ";
+
   return (
     <section className="hero" id="home">
-      <div className="hero__background">
-        <img
-          src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920&h=1080&fit=crop&q=80"
-          alt=""
-          className="hero__background-image"
-          loading="eager"
-        />
-        <div className="hero__background-overlay"></div>
+      <div className="hero__topbar">
+        <span className="hero__topbar-item">Brooklyn, NY</span>
+        <span className="hero__topbar-item">Est. 2020</span>
+        <span className="hero__topbar-item">Specialty Coffee</span>
       </div>
 
-      <div className="hero__container">
+      <div className="hero__main">
         <div className="hero__content">
-          <span className="hero__eyebrow">Est. 2020</span>
+          <span className="hero__eyebrow">Premium Coffee Experience</span>
+          
           <h1 className="hero__title">
-            Where Every Cup <br />
-            Tells a <span>Story</span>
+            Where Every<br />
+            Cup Tells a<br />
+            <span className="hero__title-accent">Story</span>
           </h1>
+          
           <p className="hero__subtitle">
-            {HERO_CONTENT.subheadline}
+            Single-origin beans, artisan roasting, and a calm space crafted for those who appreciate the finer details.
           </p>
           
           <div className="hero__cta">
             <Button href="#menu" size="lg" onClick={(e) => handleNavClick(e, '#menu')}>
-              View Menu
+              <span>View Menu</span>
             </Button>
-            <Button href="#location" variant="secondary" size="lg" onClick={(e) => handleNavClick(e, '#location')}>
-              Get Directions
-            </Button>
-          </div>
-
-          <div className="hero__badges">
-            {HERO_CONTENT.trustBadges.map((badge, index) => (
-              <div key={index} className="hero__badge">
-                <CheckIcon />
-                {badge}
-              </div>
-            ))}
+            <a 
+              href="#location" 
+              className="hero__cta-link"
+              onClick={(e) => handleNavClick(e, '#location')}
+            >
+              Visit Us
+              <ArrowIcon />
+            </a>
           </div>
         </div>
 
-        <div className="hero__image-wrapper">
-          <img
-            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=1000&fit=crop&q=80"
-            alt="Barista pouring latte art"
-            className="hero__image"
-          />
-          <div className="hero__image-accent"></div>
-          <div className="hero__image-badge">
-            <div className="hero__image-badge-icon">
-              <CoffeeIcon />
-            </div>
-            <div>
-              <div className="hero__image-badge-text">80+</div>
-              <div className="hero__image-badge-subtext">Score Rating</div>
-            </div>
+        <div className="hero__visual">
+          <div className="hero__number">EightyPlus</div>
+          <div className="hero__image-container">
+            <img
+              src="https://fruitbasket.limepack.com/blog/wp-content/uploads/2024/03/pexels-jason-toevs-2068296.jpg"
+              alt="Barista crafting coffee"
+              className="hero__image"
+            />
+            <div className="hero__image-overlay"></div>
+            <span className="hero__image-caption">Crafted with intention</span>
           </div>
         </div>
       </div>
 
-      <div className="hero__scroll">
-        <span>Scroll</span>
-        <div className="hero__scroll-line"></div>
+      <div className="hero__marquee">
+        <div className="hero__marquee-track">
+          <span className="hero__marquee-text">
+            {marqueeContent}{marqueeContent}{marqueeContent}
+          </span>
+        </div>
       </div>
     </section>
   );
